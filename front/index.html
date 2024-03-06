@@ -3,10 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Proyecto M2</title>
   </head>
   <body>
-    <h1>Proyecto de M2</h1>
+    <header>
+      <nav id="nav">
+        <img id="logo" src="./assets/images/logo.jpeg" alt="logo">
+        <h1>Proyecto</h1>
+        <ul class="list">
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./pages/aboutProyect.html">Sobre mi proyecto</a>
+          </li>
+          <li>
+            <a href="./pages/filmsHistory.html">Historia del cine</a>  
+          </li>
+          <li>
+            <a href="./pages/recommendedWebsites.html">Webs Recomendadas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="slides">
+        <img src="./assets/images/marvel.webp" alt="wonder Woman Slide">
+      </section>
+      <section id="films"></section>
+    </main>
+    <footer>
+      <div class="logoDiv">
+        <img id="logo" src="./assets/images/logo.jpeg" alt="logo">
+        <span>CINEMA</span>
+      </div>
+      
+      <p>&copy;2024 Cinema App</p>
+
+      <div class="logoDiv">
+        <img src="./assets/images/facebook.jpeg" alt="icono facebook">
+        <img src="./assets/images/instagram.jpeg" alt="icono instagram">
+        <img src="./assets/images/titok.jpeg" alt="icono TikTok">
+      </div>
+      
+    </footer>
 
     <script src="./scripts/tempData.js"></script>
     <script src="./scripts/index.js"></script>
