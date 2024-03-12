@@ -1,5 +1,6 @@
+const filmsSection = document.getElementById('films');
+
 function renderFilms(movie){
-    const filmsSection = document.getElementById('films');
     
     const movieElement = document.createElement('article');
     const containerMovie = document.createElement('div');

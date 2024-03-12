@@ -1,6 +1,9 @@
 /* const filmsSection = document.getElementById('films'); */
 
-const renderFilms = require('./renderFilms');
+//const renderFilms = require('./renderFilms');
 
 //tempData.forEach(renderFilms);
-$.get('https://students-api.2.us-1.fl0.io/movies', (data) => data.forEach(renderFilms));
+//$.get('https://students-api.2.us-1.fl0.io/movies', (data) => data.forEach(renderFilms));
+
+const getFilms = require('./handler');
+getFilms();
