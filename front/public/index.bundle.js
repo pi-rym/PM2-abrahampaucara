@@ -15,7 +15,7 @@
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/renderFilms.js\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\n\n/* con async/await axios */\nconst getFilms = async() =>  {\n    try {\n        //const response = await axios.get('https://students-api.up.railway.app/movies');\n        const response = await axios.get('http://localhost:3000/movies');\n        \n        const { data } = response;\n        //const data = response.data;\n        data.forEach(renderFilms);\n    }catch(error){\n        console.log(error);\n    }\n}\n\nconst postMovie = async (newMovie) => {\n    console.log(\"En handler: \",newMovie);\n    try {\n    const response = await axios.post(\"http://localhost:3000/movies\", newMovie);\n    console.log(response);\n    } catch (error) {\n    console.log(error);\n    }\n};\n\n/* con Promesas */\n// const getFilms = () => {\n//     const getFilms = $.get('https://students-api.up.railway.app/movies');\n//     getFilms.then((data) => data.forEach(renderFilms))\n//     .catch((error) => console.log(error));\n// }\n\n\nmodule.exports = {\n    getFilms,\n    postMovie\n};\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
+eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/renderFilms.js\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\n\nconst getFilms = async() =>  {\n    try {\n        const response = await axios.get('http://localhost:3000/movies');\n        const { data } = response;\n        data.forEach(renderFilms);\n    }catch(error){\n        console.log(error);\n    }\n}\n\nconst postMovie = async (newMovie) => {\n    console.log(\"En handler: \",newMovie);\n    try {\n    const response = await axios.post(\"http://localhost:3000/movies\", newMovie);\n    console.log(response);\n    } catch (error) {\n    console.log(error);\n    }\n};\nmodule.exports = {\n    getFilms,\n    postMovie\n};\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/r
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("/* const filmsSection = document.getElementById('films'); */\n\n//const renderFilms = require('./renderFilms');\n\n//tempData.forEach(renderFilms);\n//$.get('https://students-api.2.us-1.fl0.io/movies', (data) => data.forEach(renderFilms));\n\nconst  { getFilms, postMovie } = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\ngetFilms();\npostMovie();\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const  { getFilms, postMovie } = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\ngetFilms();\npostMovie();\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ eval("/* const filmsSection = document.getElementById('films'); */\n\n//const re
   \********************************/
 /***/ ((module) => {
 
-eval("const filmsSection = document.getElementById('films');\n\nfunction renderFilms(movie){\n    \n    const movieElement = document.createElement('article');\n    const containerMovie = document.createElement('div');\n    movieElement.classList.add('movie');\n    containerMovie.classList.add('divMovie');\n\n    movieElement.innerHTML = `<img src=\"${movie.poster}\" alt=\"${movie.title}\"/>`;\n\n    containerMovie.innerHTML = `\n    <a href=\"#\"><h3>${movie.title} (${movie.year})</h3></a>\n    <p><strong>Director:</strong> ${movie.director}</p>\n    <p><strong>Duracion:</strong> ${movie.duration} [min]</p>\n    <p><strong>Genero:</strong> ${movie.genre.join(', ')}</p>\n    <p><strong>Rate:</strong> ${movie.rate}</p>\n    `\n\n    filmsSection.appendChild(movieElement);\n    movieElement.appendChild(containerMovie);\n}\n\nmodule.exports = renderFilms;\n\n//# sourceURL=webpack://front/./scripts/renderFilms.js?");
+eval("const filmsSection = document.getElementById('films');\n\nfunction renderFilms(movie){\n    \n    const movieElement = document.createElement('article');\n    const containerMovie = document.createElement('div');\n    movieElement.classList.add('movie');\n    containerMovie.classList.add('divMovie');\n\n    movieElement.innerHTML = `<img src=\"${movie.poster}\" alt=\"${movie.title}\"/>`;\n\n    containerMovie.innerHTML = `\n    <a href=\"#\"><h3>${movie.title} (${movie.year})</h3></a>\n    <p><strong>Director:</strong> ${movie.director}</p>\n    <p><strong>Duracion:</strong> ${movie.duration}</p>\n    <p><strong>Genero:</strong> ${movie.genre.join(', ')}</p>\n    <p><strong>Rate:</strong> ${movie.rate}</p>\n    `\n\n    filmsSection.appendChild(movieElement);\n    movieElement.appendChild(containerMovie);\n}\n\nmodule.exports = renderFilms;\n\n//# sourceURL=webpack://front/./scripts/renderFilms.js?");
 
 /***/ }),
 

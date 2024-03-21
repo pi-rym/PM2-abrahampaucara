@@ -8,7 +8,6 @@ const { postMovie } = require("./handler");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  //seleccionar cada valor de los inputs con id
   const title = document.getElementById("title").value;
   const director = document.getElementById("director").value;
   const year = document.getElementById("year").value;
@@ -35,7 +34,6 @@ form.addEventListener("submit", function (event) {
       return;
     }
 
-  //crear un objeto con los valores de los inputs
   const newMovie = {
     title,
     director,

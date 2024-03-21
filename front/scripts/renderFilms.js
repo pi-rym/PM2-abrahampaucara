@@ -12,7 +12,7 @@ function renderFilms(movie){
     containerMovie.innerHTML = `
     <a href="#"><h3>${movie.title} (${movie.year})</h3></a>
     <p><strong>Director:</strong> ${movie.director}</p>
-    <p><strong>Duracion:</strong> ${movie.duration} [min]</p>
+    <p><strong>Duracion:</strong> ${movie.duration}</p>
     <p><strong>Genero:</strong> ${movie.genre.join(', ')}</p>
     <p><strong>Rate:</strong> ${movie.rate}</p>
     `
