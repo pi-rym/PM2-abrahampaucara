@@ -12,12 +12,10 @@ const getFilms = async() =>  {
 }
 
 const postMovie = async (newMovie) => {
-    console.log("En handler: ",newMovie);
     try {
     const response = await axios.post("http://localhost:3000/movies", newMovie);
-    console.log(response);
     } catch (error) {
-    console.log(error);
+        console.log(error);
     }
 };
 module.exports = {

@@ -15,7 +15,7 @@
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/renderFilms.js\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\n\nconst getFilms = async() =>  {\n    try {\n        const response = await axios.get('http://localhost:3000/movies');\n        const { data } = response;\n        data.forEach(renderFilms);\n    }catch(error){\n        console.log(error);\n    }\n}\n\nconst postMovie = async (newMovie) => {\n    console.log(\"En handler: \",newMovie);\n    try {\n    const response = await axios.post(\"http://localhost:3000/movies\", newMovie);\n    console.log(response);\n    } catch (error) {\n    console.log(error);\n    }\n};\nmodule.exports = {\n    getFilms,\n    postMovie\n};\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
+eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/renderFilms.js\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\n\nconst getFilms = async() =>  {\n    try {\n        const response = await axios.get('http://localhost:3000/movies');\n        const { data } = response;\n        data.forEach(renderFilms);\n    }catch(error){\n        console.log(error);\n    }\n}\n\nconst postMovie = async (newMovie) => {\n    try {\n    const response = await axios.post(\"http://localhost:3000/movies\", newMovie);\n    } catch (error) {\n        console.log(error);\n    }\n};\nmodule.exports = {\n    getFilms,\n    postMovie\n};\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/r
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const  { getFilms, postMovie } = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\ngetFilms();\npostMovie();\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const  { getFilms, postMovie } = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\ngetFilms();\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
