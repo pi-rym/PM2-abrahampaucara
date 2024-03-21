@@ -53,17 +53,7 @@
                 >
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            
           </div>
         </div>
       </nav>
@@ -77,19 +67,7 @@
           <input
             type="text"
             class="form-control"
-            id="validationCustom01"
-            placeholder="Escriba el titulo de la Pelicula"
-            required
-          />
-          <div class="valid-feedback">Looks good!</div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustom02" class="form-label">Año</label>
-          <input
-            type="text"
-            class="form-control"
-            id="validationCustom02"
-            placeholder="Escriba el año de la Pelicula"
+            id="title"
             required
           />
           <div class="valid-feedback">Looks good!</div>
@@ -99,8 +77,47 @@
           <input
             type="text"
             class="form-control"
-            id="validationCustom03"
-            placeholder="Escriba el director de la Pelicula"
+            id="director"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Año</label>
+          <input
+            type="text"
+            class="form-control"
+            id="year"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-2">
+          <label for="validationCustom06" class="form-label">Duracion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="duration"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-2">
+          <label for="validationCustom06" class="form-label">Rate</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rate"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Genero</label>
+          <input
+            type="text"
+            class="form-control"
+            id="genre"
             required
           />
           <div class="valid-feedback">Looks good!</div>
@@ -110,36 +127,19 @@
           <input
             type="text"
             class="form-control"
-            id="validationCustom04"
+            id="urlImage"
             required
           />
           <div class="invalid-feedback">Please provide a valid city.</div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustom05" class="form-label">Genero</label>
-          <input
-            type="text"
-            class="form-control"
-            id="validationCustom05"
-            placeholder="Escriba el Genero de la Pelicula"
-            required
-          />
-          <div class="valid-feedback">Looks good!</div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustom06" class="form-label">Rate</label>
-          <input
-            type="text"
-            class="form-control"
-            id="validationCustom06"
-            required
-          />
-          <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Cargar datos</button>
         </div>
       </form>
+      <div style="margin: 10px">
+        <button class="btn btn-primary" type="button" id="clearButton">Limpiar datos</button>
+      </div>
     </main>
+    <script src="../public/createMovie.bundle.js"></script>
   </body>
 </html>

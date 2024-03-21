@@ -9,23 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./scripts/createMovie.js":
+/*!********************************!*\
+  !*** ./scripts/createMovie.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const clearButton = document.getElementById(\"clearButton\");\n\nconst form = document.querySelector(\"form\");\nconst inputs = form.querySelectorAll(\"input\");\n\nconst { postMovie } = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\n\nform.addEventListener(\"submit\", function (event) {\n  event.preventDefault();\n\n  //seleccionar cada valor de los inputs con id\n  const title = document.getElementById(\"title\").value;\n  const director = document.getElementById(\"director\").value;\n  const year = document.getElementById(\"year\").value;\n  const duration = document.getElementById(\"duration\").value;\n  const rate = document.getElementById(\"rate\").value;\n  const genre = document.getElementById(\"genre\").value;\n  const urlImage = document.getElementById(\"urlImage\").value;\n  \n    if (\n        title === \"\" ||\n        year === \"\" ||\n        director === \"\" ||\n        urlImage === \"\" ||\n        genre === \"\" ||\n        rate === \"\" ||\n        duration === \"\"\n    ) {\n        alert(\"Todos los campos son obligatorios\");\n        return;\n    }\n\n  //crear un objeto con los valores de los inputs\n  const newMovie = {\n    title,\n    director,\n    year,\n    duration,\n    rate,\n    genre: genre.split(\",\"),\n    poster: urlImage,\n  };\n  postMovie(newMovie);\n});\n\nclearButton.addEventListener(\"click\", function () {\n  inputs.forEach((input) => {\n    input.value = \"\";\n  });\n});\n\n\n//# sourceURL=webpack://front/./scripts/createMovie.js?");
+
+/***/ }),
+
 /***/ "./scripts/handler.js":
 /*!****************************!*\
   !*** ./scripts/handler.js ***!
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/renderFilms.js\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\n\n/* con async/await axios */\nconst getFilms = async() =>  {\n    try {\n        //const response = await axios.get('https://students-api.up.railway.app/movies');\n        const response = await axios.get('http://localhost:3000/movies');\n        \n        const { data } = response;\n        //const data = response.data;\n        data.forEach(renderFilms);\n    }catch(error){\n        console.log(error);\n    }\n}\n\nconst postMovie = async () => {\n    try {\n    console.log('postMovie', newMovie);\n    const response = await axios.post(\"http://localhost:3000/movies\", newMovie);\n    console.log(response);\n    } catch (error) {\n    console.log(error);\n    }\n};\n\n/* con Promesas */\n// const getFilms = () => {\n//     const getFilms = $.get('https://students-api.up.railway.app/movies');\n//     getFilms.then((data) => data.forEach(renderFilms))\n//     .catch((error) => console.log(error));\n// }\n\n\nmodule.exports = {\n    getFilms,\n    postMovie\n};\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
-
-/***/ }),
-
-/***/ "./scripts/index.js":
-/*!**************************!*\
-  !*** ./scripts/index.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("/* const filmsSection = document.getElementById('films'); */\n\n//const renderFilms = require('./renderFilms');\n\n//tempData.forEach(renderFilms);\n//$.get('https://students-api.2.us-1.fl0.io/movies', (data) => data.forEach(renderFilms));\n\nconst  { getFilms, postMovie } = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\ngetFilms();\npostMovie();\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const renderFilms = __webpack_require__(/*! ./renderFilms */ \"./scripts/renderFilms.js\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\n\n/* con async/await axios */\nconst getFilms = async() =>  {\n    try {\n        //const response = await axios.get('https://students-api.up.railway.app/movies');\n        const response = await axios.get('http://localhost:3000/movies');\n        \n        const { data } = response;\n        //const data = response.data;\n        data.forEach(renderFilms);\n    }catch(error){\n        console.log(error);\n    }\n}\n\nconst postMovie = async (newMovie) => {\n    console.log(\"En handler: \",newMovie);\n    try {\n    const response = await axios.post(\"http://localhost:3000/movies\", newMovie);\n    console.log(response);\n    } catch (error) {\n    console.log(error);\n    }\n};\n\n/* con Promesas */\n// const getFilms = () => {\n//     const getFilms = $.get('https://students-api.up.railway.app/movies');\n//     getFilms.then((data) => data.forEach(renderFilms))\n//     .catch((error) => console.log(error));\n// }\n\n\nmodule.exports = {\n    getFilms,\n    postMovie\n};\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
 
 /***/ }),
 
@@ -94,7 +94,7 @@ eval("// Axios v1.6.7 Copyright (c) 2024 Matt Zabriskie and contributors\n\n\nfu
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/createMovie.js");
 /******/ 	
 /******/ })()
 ;

@@ -15,6 +15,16 @@ const getFilms = async() =>  {
     }
 }
 
+const postMovie = async (newMovie) => {
+    console.log("En handler: ",newMovie);
+    try {
+    const response = await axios.post("http://localhost:3000/movies", newMovie);
+    console.log(response);
+    } catch (error) {
+    console.log(error);
+    }
+};
+
 /* con Promesas */
 // const getFilms = () => {
 //     const getFilms = $.get('https://students-api.up.railway.app/movies');
@@ -23,4 +33,7 @@ const getFilms = async() =>  {
 // }
 
 
-module.exports = getFilms;
+module.exports = {
+    getFilms,
+    postMovie
+};
