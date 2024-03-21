@@ -30,6 +30,11 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
+    if (rate < 0.0 || rate > 10.0) {
+      alert("Rate debe ser un número entre 0.0 y 10");
+      return;
+    }
+
   //crear un objeto con los valores de los inputs
   const newMovie = {
     title,

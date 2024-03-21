@@ -85,17 +85,18 @@
         <div class="col-md-4">
           <label for="validationCustom02" class="form-label">Año</label>
           <input
-            type="text"
+            type="number"
             class="form-control"
             id="year"
+            placeholder="YYYY"
             required
           />
           <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="col-md-2">
-          <label for="validationCustom06" class="form-label">Duracion</label>
+          <label for="validationCustom06" class="form-label">Duracion [min]</label>
           <input
-            type="text"
+            type="number"
             class="form-control"
             id="duration"
             required
@@ -105,9 +106,11 @@
         <div class="col-md-2">
           <label for="validationCustom06" class="form-label">Rate</label>
           <input
-            type="text"
+            type="number"
+            step="0.1"
             class="form-control"
             id="rate"
+            placeholder="0.0 - 10.0"
             required
           />
           <div class="valid-feedback">Looks good!</div>
@@ -125,7 +128,7 @@
         <div class="col-md-6">
           <label for="validationCustom04" class="form-label">URL de la Imagen</label>
           <input
-            type="text"
+            type="url"
             class="form-control"
             id="urlImage"
             required
