@@ -3,7 +3,6 @@ const validateUser = (req, res, next) => {
   if (!name) {
     return res.status(400).json({ error: 'Nombre es requerido' });
   } else {
-    //return res.status(200).json({ message: 'Usuario valido' });
     next();
   }
 };
